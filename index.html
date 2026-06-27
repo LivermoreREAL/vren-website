@@ -1,0 +1,1050 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>VREN – Valley Real Estate Network | Pleasanton, Dublin & Sunol</title>
+  <meta name="description" content="Valley Real Estate Network (VREN) — the Tri-Valley's weekly real estate marketing meeting for Pleasanton, Dublin & Sunol professionals. Every Friday morning at Sidetrack Bar & Grill." />
+  <meta property="og:title" content="VREN – Valley Real Estate Network" />
+  <meta property="og:description" content="Weekly real estate networking for Pleasanton, Dublin & Sunol. Every Friday morning at Sidetrack Bar & Grill." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="images/vren-logo.png" />
+  <link rel="icon" type="image/png" href="images/vren-logo.png" />
+  <link rel="apple-touch-icon" href="images/vren-logo.png" />
+  <!-- Font upgrade: Outfit (body) + DM Serif Display (headings) -->
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --teal: #28A89A;
+      --teal-dark: #1c8075;
+      --teal-light: #3dc4b5;
+      --teal-muted: rgba(40,168,154,0.12);
+      --black: #0d0d0d;
+      --dark: #141414;
+      --dark2: #1e1e1e;
+      --mid: #2c2c2c;
+      --mid2: #383838;
+      --gray: #7a7a7a;
+      --gray-light: #b0b0b0;
+      --off-white: #f7f6f4;
+      --white: #ffffff;
+      --gold: #b8922e;
+      --shadow-dark: rgba(0,0,0,0.35);
+      --shadow-teal: rgba(40,168,154,0.18);
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Outfit', sans-serif;
+      font-weight: 400;
+      color: #1a1a1a;
+      background: var(--white);
+      overflow-x: hidden;
+    }
+
+    /* ── NOISE OVERLAY ── */
+    body::after {
+      content: '';
+      position: fixed; inset: 0;
+      pointer-events: none; z-index: 9999;
+      opacity: 0.025;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+      background-size: 180px;
+    }
+
+    /* ── SKIP LINK ── */
+    .skip-link {
+      position: absolute; top: -100px; left: 20px;
+      background: var(--teal); color: white; padding: 8px 16px;
+      border-radius: 0 0 6px 6px; font-size: 0.85rem; font-weight: 600;
+      text-decoration: none; z-index: 9999; transition: top 0.2s;
+    }
+    .skip-link:focus { top: 0; }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed; top: 0; width: 100%; z-index: 1000;
+      background: rgba(13,13,13,0.92);
+      backdrop-filter: blur(16px) saturate(180%);
+      -webkit-backdrop-filter: blur(16px) saturate(180%);
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0 48px; height: 68px;
+      border-bottom: 1px solid rgba(255,255,255,0.07);
+      box-shadow: 0 1px 0 rgba(40,168,154,0.3);
+    }
+    .nav-logo { display: flex; align-items: center; text-decoration: none; gap: 10px; }
+    .nav-logo img { height: 40px; filter: brightness(0) invert(1); }
+    .nav-logo span {
+      color: white; font-family: 'Outfit', sans-serif;
+      font-weight: 700; font-size: 0.95rem; letter-spacing: 0.3px;
+    }
+    .nav-links { display: flex; gap: 28px; list-style: none; }
+    .nav-links a {
+      color: rgba(255,255,255,0.65); text-decoration: none;
+      font-size: 0.78rem; font-weight: 500; letter-spacing: 1.2px;
+      text-transform: uppercase; transition: color 0.2s;
+      position: relative; padding-bottom: 2px;
+    }
+    .nav-links a::after {
+      content: ''; position: absolute; bottom: -2px; left: 0;
+      width: 0; height: 1px; background: var(--teal); transition: width 0.25s;
+    }
+    .nav-links a:hover { color: white; }
+    .nav-links a:hover::after { width: 100%; }
+    .nav-cta {
+      background: var(--teal); color: white;
+      padding: 9px 22px; border-radius: 4px;
+      font-size: 0.78rem; font-weight: 600; letter-spacing: 0.8px;
+      text-transform: uppercase; text-decoration: none;
+      transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
+      box-shadow: 0 2px 12px var(--shadow-teal);
+    }
+    .nav-cta:hover { background: var(--teal-dark); transform: translateY(-1px); box-shadow: 0 4px 18px var(--shadow-teal); }
+    .nav-cta:active { transform: translateY(0) scale(0.98); }
+    .nav-hamburger { display: none; color: white; font-size: 1.4rem; cursor: pointer; padding: 4px; }
+
+    /* ── HERO ── */
+    .hero {
+      position: relative; min-height: 100dvh;
+      display: flex; align-items: center; justify-content: center;
+      overflow: hidden;
+    }
+    .hero-slides { position: absolute; inset: 0; }
+    .hero-slide {
+      position: absolute; inset: 0;
+      background-size: cover; background-position: center;
+      opacity: 0; transition: opacity 1.4s ease-in-out;
+      transform: scale(1.03);
+      animation: heroZoom 10s ease-in-out infinite alternate;
+    }
+    .hero-slide.active { opacity: 1; }
+    @keyframes heroZoom {
+      from { transform: scale(1.0); }
+      to   { transform: scale(1.06); }
+    }
+    .hero-slide::after {
+      content: ''; position: absolute; inset: 0;
+      background: linear-gradient(
+        160deg,
+        rgba(0,0,0,0.72) 0%,
+        rgba(0,0,0,0.45) 50%,
+        rgba(13,13,13,0.8) 100%
+      );
+    }
+    .hero-content {
+      position: relative; z-index: 2; text-align: center;
+      padding: 24px; max-width: 820px;
+    }
+    .hero-eyebrow {
+      display: inline-flex; align-items: center; gap: 8px;
+      border: 1px solid rgba(40,168,154,0.5);
+      background: rgba(40,168,154,0.08);
+      color: var(--teal-light); font-size: 0.7rem; font-weight: 600;
+      letter-spacing: 3px; text-transform: uppercase;
+      padding: 7px 20px; margin-bottom: 28px;
+      border-radius: 2px;
+      backdrop-filter: blur(8px);
+    }
+    .hero-eyebrow span { width: 4px; height: 4px; background: var(--teal); border-radius: 50%; }
+    .hero-logo { height: 84px; margin: 0 auto 22px; display: block; filter: brightness(0) invert(1); }
+    .hero h1 {
+      font-family: 'DM Serif Display', serif;
+      font-size: clamp(2.6rem, 6vw, 4.4rem);
+      font-weight: 400; color: white; line-height: 1.1;
+      margin-bottom: 18px;
+      text-wrap: balance;
+      text-shadow: 0 4px 32px rgba(0,0,0,0.4);
+      letter-spacing: -0.02em;
+    }
+    .hero h1 em { font-style: italic; color: var(--teal-light); }
+    .hero-sub {
+      font-size: 1.05rem; color: rgba(255,255,255,0.78);
+      margin-bottom: 36px; line-height: 1.75; font-weight: 300;
+      max-width: 580px; margin-left: auto; margin-right: auto;
+      text-wrap: pretty;
+    }
+    .hero-pills {
+      display: flex; flex-wrap: wrap; gap: 10px;
+      justify-content: center; margin-bottom: 36px;
+    }
+    .pill {
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.18);
+      color: rgba(255,255,255,0.9); padding: 8px 18px;
+      border-radius: 100px; font-size: 0.82rem; font-weight: 500;
+      backdrop-filter: blur(8px);
+      transition: border-color 0.2s, background 0.2s;
+    }
+    .pill:hover { border-color: var(--teal); background: rgba(40,168,154,0.1); }
+    .pill i { color: var(--teal-light); margin-right: 6px; }
+    .hero-btns { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+    .btn-primary {
+      background: var(--teal); color: white;
+      padding: 14px 36px; border-radius: 4px;
+      font-weight: 600; font-size: 0.85rem; letter-spacing: 1px;
+      text-transform: uppercase; text-decoration: none;
+      transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
+      box-shadow: 0 4px 20px var(--shadow-teal);
+      border: 2px solid transparent;
+    }
+    .btn-primary:hover { background: var(--teal-dark); transform: translateY(-2px); box-shadow: 0 8px 28px var(--shadow-teal); }
+    .btn-primary:active { transform: translateY(0) scale(0.98); }
+    .btn-outline {
+      background: rgba(255,255,255,0.06); color: white;
+      padding: 14px 36px; border-radius: 4px;
+      font-weight: 600; font-size: 0.85rem; letter-spacing: 1px;
+      text-transform: uppercase; text-decoration: none;
+      border: 1.5px solid rgba(255,255,255,0.4);
+      backdrop-filter: blur(8px);
+      transition: all 0.2s;
+    }
+    .btn-outline:hover { background: rgba(255,255,255,0.12); border-color: rgba(255,255,255,0.7); transform: translateY(-2px); }
+    .btn-outline:active { transform: translateY(0) scale(0.98); }
+    .slide-dots {
+      position: absolute; bottom: 32px; left: 50%;
+      transform: translateX(-50%); display: flex; gap: 6px; z-index: 3;
+    }
+    .dot {
+      width: 6px; height: 6px; border-radius: 50%;
+      background: rgba(255,255,255,0.3); cursor: pointer;
+      transition: all 0.3s; border: none;
+    }
+    .dot.active { background: var(--teal); width: 22px; border-radius: 3px; }
+
+    /* ── INFO BAR ── */
+    .info-bar {
+      background: var(--teal);
+      display: flex; flex-wrap: wrap; justify-content: center;
+      position: relative;
+    }
+    .info-bar::before {
+      content: ''; position: absolute; inset: 0;
+      background: linear-gradient(90deg, var(--teal-dark) 0%, var(--teal) 50%, var(--teal-dark) 100%);
+      opacity: 0.4;
+    }
+    .info-item {
+      display: flex; align-items: center; gap: 10px;
+      color: white; padding: 16px 28px; font-size: 0.86rem; font-weight: 500;
+      border-right: 1px solid rgba(255,255,255,0.2);
+      position: relative; z-index: 1;
+    }
+    .info-item:last-child { border-right: none; }
+    .info-item i { font-size: 1rem; opacity: 0.85; }
+
+    /* ── SECTIONS ── */
+    section { padding: 100px 48px; }
+    .section-label {
+      text-align: center; color: var(--teal);
+      font-size: 0.7rem; font-weight: 600; letter-spacing: 4px;
+      text-transform: uppercase; margin-bottom: 12px;
+    }
+    .section-title {
+      text-align: center;
+      font-family: 'DM Serif Display', serif;
+      font-size: clamp(1.9rem, 3.5vw, 2.8rem);
+      font-weight: 400; color: #0d0d0d; margin-bottom: 14px;
+      line-height: 1.15; letter-spacing: -0.02em;
+      text-wrap: balance;
+    }
+    .section-title.light { color: white; }
+    .section-sub {
+      text-align: center; max-width: 580px; margin: 0 auto 56px;
+      color: #6b6b6b; font-size: 0.97rem; line-height: 1.8; font-weight: 400;
+      text-wrap: pretty;
+    }
+    .divider { width: 40px; height: 2px; background: var(--teal); margin: 0 auto 16px; }
+
+    /* ── SCROLL REVEAL ── */
+    .reveal {
+      opacity: 0; transform: translateY(28px);
+      transition: opacity 0.65s cubic-bezier(0.22,1,0.36,1), transform 0.65s cubic-bezier(0.22,1,0.36,1);
+    }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+    .reveal-delay-1 { transition-delay: 0.1s; }
+    .reveal-delay-2 { transition-delay: 0.2s; }
+    .reveal-delay-3 { transition-delay: 0.3s; }
+    .reveal-delay-4 { transition-delay: 0.4s; }
+    .reveal-delay-5 { transition-delay: 0.5s; }
+    .reveal-delay-6 { transition-delay: 0.6s; }
+
+    /* ── GREEN BANNER ── */
+    .green-banner {
+      background: #0f2822;
+      padding: 16px 48px; display: flex; align-items: center; gap: 14px;
+      justify-content: center; flex-wrap: wrap;
+      border-top: 1px solid rgba(40,168,154,0.2);
+      border-bottom: 1px solid rgba(40,168,154,0.2);
+    }
+    .green-banner i { color: var(--teal); font-size: 1.1rem; }
+    .green-banner p { color: rgba(255,255,255,0.82); font-size: 0.88rem; font-weight: 400; }
+    .green-banner a { color: var(--teal-light); font-weight: 600; text-decoration: none; border-bottom: 1px solid rgba(40,168,154,0.4); transition: border-color 0.2s; }
+    .green-banner a:hover { border-color: var(--teal); }
+
+    /* ── ABOUT ── */
+    .about { background: var(--off-white); }
+    .about-inner { max-width: 1000px; margin: 0 auto; }
+    .about-text p { color: #4a4a4a; line-height: 1.9; margin-bottom: 18px; font-size: 0.97rem; font-weight: 400; }
+    .about-features {
+      display: grid; grid-template-columns: repeat(3, 1fr);
+      gap: 12px; margin-top: 40px;
+    }
+    .feature-item {
+      display: flex; align-items: center; gap: 12px;
+      font-size: 0.88rem; font-weight: 500; color: #1a1a1a;
+      padding: 16px 18px; background: white; border-radius: 6px;
+      border-left: 3px solid var(--teal);
+      box-shadow: 0 2px 12px rgba(0,0,0,0.05);
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .feature-item:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(0,0,0,0.08); }
+    .feature-item i { color: var(--teal); font-size: 0.95rem; flex-shrink: 0; }
+
+    /* ── MEETING DETAILS ── */
+    .meeting { background: var(--dark); position: relative; overflow: hidden; }
+    .meeting::before {
+      content: ''; position: absolute; inset: 0;
+      background: radial-gradient(ellipse at 20% 50%, rgba(40,168,154,0.08) 0%, transparent 60%),
+                  radial-gradient(ellipse at 80% 20%, rgba(40,168,154,0.05) 0%, transparent 50%);
+      pointer-events: none;
+    }
+    .meeting-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr);
+      gap: 2px; max-width: 900px; margin: 0 auto;
+      border: 1px solid rgba(255,255,255,0.06); border-radius: 8px; overflow: hidden;
+    }
+    .meeting-card {
+      background: rgba(255,255,255,0.03); padding: 32px 26px; text-align: center;
+      border-top: 1px solid rgba(255,255,255,0.06);
+      transition: background 0.2s;
+      position: relative;
+    }
+    .meeting-card:hover { background: rgba(255,255,255,0.05); }
+    .meeting-card::before {
+      content: ''; position: absolute; top: 0; left: 50%; transform: translateX(-50%);
+      width: 40px; height: 2px; background: var(--teal);
+    }
+    .meeting-card i { font-size: 1.6rem; color: var(--teal); margin-bottom: 14px; }
+    .meeting-card h3 { color: rgba(255,255,255,0.5); font-size: 0.72rem; font-weight: 600; letter-spacing: 2px; margin-bottom: 10px; text-transform: uppercase; }
+    .meeting-card .big { font-family: 'DM Serif Display', serif; font-size: 1.6rem; font-weight: 400; color: white; margin-bottom: 6px; letter-spacing: -0.01em; }
+    .meeting-card p { color: rgba(255,255,255,0.5); font-size: 0.83rem; line-height: 1.65; font-weight: 400; }
+    .meeting-note {
+      max-width: 760px; margin: 40px auto 0;
+      background: rgba(40,168,154,0.08); border: 1px solid rgba(40,168,154,0.25);
+      border-radius: 6px; padding: 20px 26px; text-align: center;
+      color: rgba(255,255,255,0.65); font-size: 0.85rem; line-height: 1.75;
+    }
+
+    /* ── BROKER TOUR ── */
+    .broker { background: var(--off-white); }
+    .broker-two-col {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 32px; max-width: 1060px; margin: 0 auto;
+    }
+    .broker-card { background: white; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 24px rgba(0,0,0,0.06); }
+    .broker-card-header { background: var(--dark); padding: 24px 28px; display: flex; align-items: center; gap: 14px; }
+    .broker-card-header i { color: var(--teal); font-size: 1.6rem; flex-shrink: 0; }
+    .broker-card-header h3 { color: white; font-family: 'DM Serif Display', serif; font-size: 1.3rem; font-weight: 400; }
+    .broker-card-header p { color: rgba(255,255,255,0.5); font-size: 0.82rem; margin-top: 2px; }
+    .broker-card-body { padding: 24px 28px; }
+    .broker-row { display: flex; justify-content: space-between; align-items: flex-start; padding: 12px 0; border-bottom: 1px solid #f0f0f0; font-size: 0.88rem; gap: 12px; }
+    .broker-row:last-child { border-bottom: none; }
+    .broker-row .label { color: #999; font-weight: 500; flex-shrink: 0; }
+    .broker-row .value { font-weight: 600; color: #1a1a1a; text-align: right; }
+    .broker-row .value.teal { color: var(--teal); }
+    .broker-cta { padding: 0 28px 28px; }
+    .super-tour { background: var(--dark); padding: 28px; }
+    .super-tour h3 { font-family: 'DM Serif Display', serif; font-size: 1.4rem; font-weight: 400; color: var(--teal-light); margin-bottom: 6px; letter-spacing: -0.01em; }
+    .super-tour .entry-fee { font-family: 'DM Serif Display', serif; font-size: 2.2rem; font-weight: 400; color: white; letter-spacing: -0.02em; margin-bottom: 2px; }
+    .super-tour .entry-label { font-size: 0.75rem; color: rgba(255,255,255,0.4); letter-spacing: 2px; text-transform: uppercase; margin-bottom: 16px; font-weight: 500; }
+    .super-tour p { color: rgba(255,255,255,0.65); font-size: 0.88rem; line-height: 1.75; margin-bottom: 10px; }
+    .tour-steps { list-style: none; margin-top: 14px; }
+    .tour-steps li { display: flex; gap: 10px; align-items: flex-start; padding: 8px 0; color: rgba(255,255,255,0.65); font-size: 0.86rem; line-height: 1.65; border-bottom: 1px solid rgba(255,255,255,0.06); }
+    .tour-steps li:last-child { border-bottom: none; }
+    .tour-steps li i { color: var(--teal); margin-top: 3px; flex-shrink: 0; font-size: 0.75rem; }
+    .win-note { font-size: 0.78rem; color: var(--gold); font-style: italic; margin-top: 14px; opacity: 0.85; }
+
+    /* ── SIDETRACK ── */
+    .sidetrack { background: white; }
+    .sidetrack-inner { max-width: 1080px; margin: 0 auto; display: grid; grid-template-columns: 55% 1fr; gap: 64px; align-items: center; }
+    .sidetrack-img-wrap {
+      border-radius: 8px; overflow: hidden;
+      box-shadow: 0 16px 48px rgba(0,0,0,0.14), 0 4px 16px rgba(0,0,0,0.08);
+    }
+    .sidetrack-img-wrap img { width: 100%; display: block; transition: transform 0.6s ease; }
+    .sidetrack-img-wrap:hover img { transform: scale(1.03); }
+    .sidetrack-text h2 { font-family: 'DM Serif Display', serif; font-size: 2rem; font-weight: 400; margin-bottom: 10px; color: #0d0d0d; letter-spacing: -0.02em; }
+    .sidetrack-text .tagline { font-style: italic; color: var(--teal); font-size: 1rem; font-weight: 400; margin-bottom: 20px; display: block; font-family: 'DM Serif Display', serif; }
+    .sidetrack-text p { color: #555; line-height: 1.85; font-size: 0.94rem; margin-bottom: 14px; }
+    .sidetrack-info { margin: 22px 0; }
+    .sidetrack-info-row { display: flex; gap: 12px; align-items: flex-start; padding: 10px 0; font-size: 0.88rem; border-bottom: 1px solid #f0f0f0; color: #444; }
+    .sidetrack-info-row i { color: var(--teal); width: 16px; margin-top: 2px; flex-shrink: 0; font-size: 0.85rem; }
+    .sidetrack-socials { display: flex; gap: 10px; margin-top: 22px; flex-wrap: wrap; }
+    .social-btn { display: inline-flex; align-items: center; gap: 7px; padding: 9px 18px; border-radius: 4px; font-size: 0.8rem; font-weight: 600; text-decoration: none; letter-spacing: 0.3px; transition: opacity 0.2s, transform 0.15s; }
+    .social-btn:hover { opacity: 0.88; transform: translateY(-1px); }
+    .social-btn:active { transform: scale(0.97); }
+    .social-btn.fb { background: #1877F2; color: white; }
+    .social-btn.ig { background: linear-gradient(45deg,#f09433,#e6683c,#dc2743,#cc2366,#bc1888); color: white; }
+    .social-btn.web { background: var(--dark); color: white; }
+
+    /* ── VREN SOCIAL ── */
+    .vren-social { background: var(--off-white); }
+    .vren-social-inner { max-width: 860px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+    .social-card {
+      background: white; border-radius: 8px; padding: 36px 32px; text-align: center;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+      transition: transform 0.25s, box-shadow 0.25s;
+      border-top: 3px solid transparent;
+    }
+    .social-card:hover { transform: translateY(-4px); box-shadow: 0 12px 32px rgba(0,0,0,0.1); }
+    .social-card.fb-card { border-top-color: #1877F2; }
+    .social-card.ig-card { border-top-color: #e1306c; }
+    .social-card i { font-size: 2.2rem; margin-bottom: 16px; }
+    .social-card.fb-card i { color: #1877F2; }
+    .social-card.ig-card i { color: #e1306c; }
+    .social-card h3 { font-weight: 600; font-size: 1rem; margin-bottom: 6px; color: #0d0d0d; }
+    .social-card p { color: #888; font-size: 0.87rem; margin-bottom: 20px; line-height: 1.6; }
+    .social-card a { display: inline-block; padding: 10px 26px; border-radius: 4px; font-weight: 600; font-size: 0.8rem; letter-spacing: 0.3px; text-decoration: none; color: white; transition: opacity 0.2s, transform 0.15s; }
+    .social-card a:hover { opacity: 0.88; transform: translateY(-1px); }
+    .social-card a:active { transform: scale(0.97); }
+    .social-card.fb-card a { background: #1877F2; }
+    .social-card.ig-card a { background: linear-gradient(45deg,#f09433,#e6683c,#dc2743,#cc2366,#bc1888); }
+
+    /* ── SPONSOR ── */
+    .sponsor { background: var(--dark); position: relative; overflow: hidden; }
+    .sponsor::before {
+      content: ''; position: absolute; inset: 0;
+      background: radial-gradient(ellipse at 80% 80%, rgba(40,168,154,0.07) 0%, transparent 55%);
+      pointer-events: none;
+    }
+    .sponsor-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; max-width: 960px; margin: 0 auto; }
+    .sponsor-card {
+      background: rgba(255,255,255,0.04); border-radius: 8px; padding: 32px 20px; text-align: center;
+      border: 1px solid rgba(255,255,255,0.07); position: relative;
+      transition: transform 0.25s, background 0.2s, box-shadow 0.25s;
+    }
+    .sponsor-card:hover { transform: translateY(-6px); background: rgba(255,255,255,0.07); box-shadow: 0 16px 40px rgba(0,0,0,0.3); }
+    .sponsor-card.featured { border-color: var(--teal); box-shadow: 0 0 0 1px rgba(40,168,154,0.3), inset 0 1px 0 rgba(40,168,154,0.2); }
+    .sponsor-badge {
+      position: absolute; top: -11px; left: 50%; transform: translateX(-50%);
+      background: var(--teal); color: white; font-size: 0.66rem;
+      font-weight: 700; letter-spacing: 1px; text-transform: uppercase;
+      padding: 3px 14px; border-radius: 2px; white-space: nowrap;
+    }
+    .sponsor-card h3 { color: rgba(255,255,255,0.55); font-size: 0.75rem; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; margin-bottom: 16px; }
+    .sponsor-price { font-family: 'DM Serif Display', serif; font-size: 2.6rem; font-weight: 400; color: white; line-height: 1; letter-spacing: -0.02em; }
+    .sponsor-period { color: rgba(255,255,255,0.35); font-size: 0.75rem; margin-bottom: 16px; }
+    .sponsor-card p { color: rgba(255,255,255,0.5); font-size: 0.83rem; line-height: 1.7; }
+    .sponsor-cta-wrap { text-align: center; margin-top: 44px; }
+    .sponsor-contact {
+      background: rgba(40,168,154,0.08); border: 1px solid rgba(40,168,154,0.25);
+      border-radius: 8px; padding: 28px; display: inline-block;
+      text-align: center; max-width: 460px;
+    }
+    .sponsor-contact p { color: rgba(255,255,255,0.6); margin-bottom: 6px; font-size: 0.87rem; }
+    .sponsor-contact .name { color: white; font-size: 1.05rem; font-weight: 600; margin-bottom: 6px; }
+    .sponsor-contact a { color: var(--teal-light); text-decoration: none; font-weight: 500; transition: color 0.2s; }
+    .sponsor-contact a:hover { color: white; }
+    .flyer-note { max-width: 760px; margin: 28px auto 0; background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); border-radius: 6px; padding: 18px 24px; text-align: center; color: rgba(255,255,255,0.42); font-size: 0.82rem; line-height: 1.75; }
+
+    /* ── COMMITTEE ── */
+    .committee { background: white; }
+    .committee-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; max-width: 860px; margin: 0 auto; }
+    .committee-card {
+      text-align: center; padding: 30px 20px;
+      border: 1px solid #ebebeb; border-radius: 8px;
+      transition: box-shadow 0.25s, border-color 0.25s, transform 0.25s;
+    }
+    .committee-card:hover { box-shadow: 0 8px 32px rgba(0,0,0,0.08); border-color: var(--teal); transform: translateY(-3px); }
+    .committee-avatar {
+      width: 60px; height: 60px; background: var(--teal);
+      border-radius: 10px; /* squircle instead of circle */
+      margin: 0 auto 14px; display: flex; align-items: center; justify-content: center;
+      font-size: 1.1rem; color: white; font-family: 'Outfit', sans-serif; font-weight: 700;
+      letter-spacing: -0.5px;
+    }
+    .committee-card h3 { font-size: 0.95rem; font-weight: 600; color: #0d0d0d; margin-bottom: 3px; }
+    .committee-card .role { font-size: 0.72rem; color: var(--teal); font-weight: 600; text-transform: uppercase; letter-spacing: 1.2px; margin-bottom: 6px; }
+    .committee-card .company { font-size: 0.78rem; color: #aaa; font-weight: 500; margin-bottom: 8px; }
+    .committee-card a { color: var(--teal); text-decoration: none; font-size: 0.8rem; display: block; margin-top: 3px; transition: color 0.2s; }
+    .committee-card a:hover { color: var(--teal-dark); }
+
+    /* ── NONPROFIT ── */
+    .nonprofit-sponsor { background: var(--off-white); padding: 64px 48px; }
+    .nonprofit-inner { max-width: 620px; margin: 0 auto; text-align: center; }
+    .nonprofit-inner p.label { font-size: 0.7rem; font-weight: 600; letter-spacing: 4px; text-transform: uppercase; color: var(--teal); margin-bottom: 28px; }
+    .nonprofit-inner img { max-width: 260px; margin: 0 auto 20px; display: block; }
+    .nonprofit-inner p.desc { color: #666; font-size: 0.92rem; line-height: 1.8; }
+
+    /* ── CONTACT ── */
+    .contact { background: var(--dark); position: relative; overflow: hidden; }
+    .contact::before {
+      content: ''; position: absolute; inset: 0;
+      background: radial-gradient(ellipse at 0% 100%, rgba(40,168,154,0.07) 0%, transparent 50%);
+    }
+    .contact-inner { max-width: 860px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: start; position: relative; }
+    .contact-info-item { display: flex; gap: 16px; align-items: flex-start; padding: 18px 0; border-bottom: 1px solid rgba(255,255,255,0.07); }
+    .contact-info-item:last-child { border-bottom: none; }
+    .ci-icon { width: 42px; height: 42px; border-radius: 8px; background: rgba(40,168,154,0.15); border: 1px solid rgba(40,168,154,0.25); display: flex; align-items: center; justify-content: center; color: var(--teal-light); font-size: 0.95rem; flex-shrink: 0; }
+    .ci-text h4 { font-weight: 600; color: white; margin-bottom: 4px; font-size: 0.92rem; }
+    .ci-text p { color: rgba(255,255,255,0.5); font-size: 0.86rem; line-height: 1.65; }
+    .ci-text a { color: var(--teal-light); text-decoration: none; font-size: 0.86rem; transition: color 0.2s; }
+    .ci-text a:hover { color: white; }
+    .map-embed { margin-top: 4px; }
+    .map-embed iframe { width: 100%; height: 230px; border: none; border-radius: 8px; filter: grayscale(20%); }
+    .social-contact-box { margin-top: 20px; background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); border-radius: 8px; padding: 20px 24px; }
+    .social-contact-box p { color: rgba(255,255,255,0.7); font-size: 0.87rem; font-weight: 500; margin-bottom: 12px; }
+
+    /* ── FOOTER ── */
+    footer { background: var(--black); color: rgba(255,255,255,0.45); padding: 60px 48px 28px; }
+    .footer-top { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 48px; max-width: 1080px; margin: 0 auto 44px; }
+    .footer-brand img { height: 48px; margin-bottom: 14px; filter: brightness(0) invert(1); opacity: 0.7; }
+    .footer-brand p { font-size: 0.84rem; line-height: 1.75; max-width: 260px; }
+    .footer-col h4 { color: rgba(255,255,255,0.7); font-size: 0.72rem; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 18px; }
+    .footer-col ul { list-style: none; }
+    .footer-col li { margin-bottom: 10px; }
+    .footer-col a { color: rgba(255,255,255,0.42); text-decoration: none; font-size: 0.85rem; transition: color 0.2s; }
+    .footer-col a:hover { color: var(--teal-light); }
+    .footer-bottom { border-top: 1px solid rgba(255,255,255,0.07); padding-top: 22px; max-width: 1080px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px; }
+    .footer-bottom p { font-size: 0.77rem; }
+    .footer-socials { display: flex; gap: 14px; }
+    .footer-socials a { color: rgba(255,255,255,0.3); font-size: 1rem; transition: color 0.2s; }
+    .footer-socials a:hover { color: var(--teal-light); }
+    .footer-disclaimer { max-width: 1080px; margin: 18px auto 0; font-size: 0.74rem; color: rgba(255,255,255,0.25); line-height: 1.75; border-top: 1px solid rgba(255,255,255,0.05); padding-top: 18px; }
+
+    /* ── FOCUS RING ── */
+    :focus-visible { outline: 2px solid var(--teal); outline-offset: 3px; border-radius: 3px; }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 960px) {
+      .about-features { grid-template-columns: 1fr 1fr; }
+      .meeting-grid { grid-template-columns: 1fr 1fr; }
+      .broker-two-col, .sidetrack-inner, .contact-inner, .footer-top, .vren-social-inner { grid-template-columns: 1fr; }
+      .sponsor-grid { grid-template-columns: 1fr 1fr; }
+      .footer-top { grid-template-columns: 1fr 1fr; }
+      nav { padding: 0 22px; }
+      .nav-links, .nav-cta { display: none; }
+      .nav-hamburger { display: block; }
+      section { padding: 72px 24px; }
+      .info-bar { flex-direction: column; }
+      .info-item { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.15); width: 100%; justify-content: center; }
+      .green-banner { padding: 14px 24px; }
+    }
+    @media (max-width: 600px) {
+      .about-features, .meeting-grid, .committee-grid { grid-template-columns: 1fr; }
+      .sponsor-grid { grid-template-columns: 1fr; }
+      .footer-top { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<a href="#main-content" class="skip-link">Skip to main content</a>
+
+<!-- NAV -->
+<nav>
+  <a href="#" class="nav-logo">
+    <img src="images/vren-logo.png" alt="VREN logo" />
+    <span>Valley Real Estate Network</span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#meeting">Meeting</a></li>
+    <li><a href="#broker-tour">Broker Tour</a></li>
+    <li><a href="#sponsor">Sponsorship</a></li>
+    <li><a href="#sidetrack">Venue</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <a href="#contact" class="nav-cta">Attend a meeting</a>
+  <div class="nav-hamburger" onclick="toggleMenu()" aria-label="Open menu"><i class="fas fa-bars"></i></div>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="hero-slides">
+    <div class="hero-slide active" style="background-image:url('images/meeting1.jpg');"></div>
+    <div class="hero-slide" style="background-image:url('images/community1.jpg'); background-position: center top;"></div>
+    <div class="hero-slide" style="background-image:url('images/meeting2.jpg');"></div>
+    <div class="hero-slide" style="background-image:url('images/community2.jpg'); background-position: center center;"></div>
+    <div class="hero-slide" style="background-image:url('images/meeting3.jpg');"></div>
+    <div class="hero-slide" style="background-image:url('images/sidetrack.jpg');"></div>
+  </div>
+  <div class="hero-content">
+    <div class="hero-eyebrow"><span></span>Pleasanton · Dublin · Sunol<span></span></div>
+    <img src="images/vren-logo.png" alt="VREN" class="hero-logo" />
+    <h1>Valley Real Estate<br><em>Network</em></h1>
+    <p class="hero-sub">Where the Tri-Valley real estate community connects, collaborates, and grows — every Friday morning.</p>
+    <div class="hero-pills">
+      <span class="pill"><i class="fas fa-calendar-alt"></i>Friday mornings</span>
+      <span class="pill"><i class="fas fa-clock"></i>9 AM</span>
+      <span class="pill"><i class="fas fa-map-marker-alt"></i>Pleasanton</span>
+      <span class="pill"><i class="fas fa-ticket-alt"></i>$5 admission</span>
+    </div>
+    <div class="hero-btns">
+      <a href="#meeting" class="btn-primary">Meeting details</a>
+      <a href="#contact" class="btn-outline">Get in touch</a>
+    </div>
+  </div>
+  <div class="slide-dots">
+    <button class="dot active" onclick="goToSlide(0)" aria-label="Slide 1"></button>
+    <button class="dot" onclick="goToSlide(1)" aria-label="Slide 2"></button>
+    <button class="dot" onclick="goToSlide(2)" aria-label="Slide 3"></button>
+    <button class="dot" onclick="goToSlide(3)" aria-label="Slide 4"></button>
+    <button class="dot" onclick="goToSlide(4)" aria-label="Slide 5"></button>
+    <button class="dot" onclick="goToSlide(5)" aria-label="Slide 6"></button>
+  </div>
+</section>
+
+<!-- INFO BAR -->
+<div class="info-bar">
+  <div class="info-item"><i class="fas fa-calendar-check"></i>Friday mornings</div>
+  <div class="info-item"><i class="fas fa-clock"></i>9 AM – 10 AM · Doors 8:30 AM</div>
+  <div class="info-item"><i class="fas fa-map-marker-alt"></i>Sidetrack Bar & Grill, Pleasanton</div>
+  <div class="info-item"><i class="fas fa-dollar-sign"></i>$5 admission</div>
+  <div class="info-item"><i class="fas fa-coffee"></i>Breakfast & coffee included</div>
+</div>
+
+<!-- ABOUT -->
+<section class="about" id="about">
+  <div class="about-inner">
+    <div class="reveal"><div class="section-label">About VREN</div></div>
+    <div class="reveal reveal-delay-1"><div class="divider"></div></div>
+    <div class="reveal reveal-delay-1"><h2 class="section-title">Networking for the Tri-Valley real estate community</h2></div>
+    <div class="reveal reveal-delay-2"><p class="section-sub">Realtors®, affiliates, and professionals connect, learn, and build real relationships — every Friday morning in Pleasanton.</p></div>
+    <div class="about-text reveal reveal-delay-2" style="max-width:800px;margin:0 auto 0;">
+      <p>The Valley Real Estate Network (VREN) is the weekly marketing meeting for real estate professionals in the Pleasanton, Dublin, and Sunol area. We bring together agents, lenders, title reps, and other professionals to connect, share listings, hear from quality guest speakers, and build the relationships that drive our market forward.</p>
+      <p>Whether you're a seasoned agent or new to the Tri-Valley market, VREN is your go-to weekly touchpoint for staying informed and plugged in to the community.</p>
+    </div>
+    <div class="about-features">
+      <div class="feature-item reveal reveal-delay-1"><i class="fas fa-microphone-alt"></i>Weekly guest speakers</div>
+      <div class="feature-item reveal reveal-delay-2"><i class="fas fa-route"></i>Broker tour listings</div>
+      <div class="feature-item reveal reveal-delay-3"><i class="fas fa-star"></i>Super Tour cash prizes</div>
+      <div class="feature-item reveal reveal-delay-4"><i class="fas fa-bullhorn"></i>Community announcements</div>
+      <div class="feature-item reveal reveal-delay-5"><i class="fas fa-users"></i>Panel discussions</div>
+      <div class="feature-item reveal reveal-delay-6"><i class="fas fa-handshake"></i>Networking before & after</div>
+    </div>
+  </div>
+</section>
+
+<!-- GREEN BANNER -->
+<div class="green-banner">
+  <i class="fas fa-leaf"></i>
+  <p><strong>VREN has gone green.</strong> Access the tour sheet and all VREN info digitally at <a href="http://bayeast.org/wp-content/uploads/VREN-Toursheet.pdf" target="_blank">the tour sheet link</a>. See a committee member for help.</p>
+</div>
+
+<!-- MEETING DETAILS -->
+<section class="meeting" id="meeting" id="main-content">
+  <div class="section-label reveal" style="color:var(--teal)">Weekly meeting</div>
+  <div class="divider reveal reveal-delay-1"></div>
+  <h2 class="section-title light reveal reveal-delay-1">Meeting details</h2>
+  <p class="section-sub reveal reveal-delay-2" style="color:rgba(255,255,255,0.5);">Join us Friday mornings for breakfast, networking, and everything happening in the Tri-Valley real estate market.</p>
+  <div class="meeting-grid">
+    <div class="meeting-card reveal reveal-delay-1">
+      <i class="fas fa-calendar-alt"></i>
+      <h3>Day</h3>
+      <div class="big">Friday</div>
+      <p>Select Friday mornings throughout the year</p>
+    </div>
+    <div class="meeting-card reveal reveal-delay-2">
+      <i class="fas fa-clock"></i>
+      <h3>Time</h3>
+      <div class="big">9 AM</div>
+      <p>Meeting 9–10 AM · Doors 8:30 AM</p>
+    </div>
+    <div class="meeting-card reveal reveal-delay-3">
+      <i class="fas fa-ticket-alt"></i>
+      <h3>Admission</h3>
+      <div class="big">$5</div>
+      <p>Includes breakfast burrito or pastries + coffee or tea</p>
+    </div>
+    <div class="meeting-card reveal reveal-delay-4">
+      <i class="fas fa-map-marker-alt"></i>
+      <h3>Location</h3>
+      <p style="color:white;font-weight:600;font-size:0.97rem;margin-bottom:6px;">Sidetrack Bar & Grill</p>
+      <p>30 W Angela St<br>Pleasanton, CA 94566</p>
+    </div>
+    <div class="meeting-card reveal reveal-delay-5">
+      <i class="fas fa-coffee"></i>
+      <h3>Includes</h3>
+      <p style="color:rgba(255,255,255,0.85);font-weight:500;">Breakfast burrito or pastries</p>
+      <p>Coffee or tea · Network before, during & after</p>
+    </div>
+    <div class="meeting-card reveal reveal-delay-6">
+      <i class="fas fa-envelope"></i>
+      <h3>Contact VREN</h3>
+      <p><a href="mailto:vren.sponsorship@gmail.com" style="color:var(--teal-light);text-decoration:none;font-weight:600;font-size:0.88rem;">vren.sponsorship@gmail.com</a></p>
+    </div>
+  </div>
+  <div class="meeting-note reveal">
+    <i class="fas fa-exclamation-circle" style="color:var(--teal);margin-right:8px;"></i>
+    Any discussions regarding commissions or compensation during marketing meetings are strictly prohibited in accordance with association policies and applicable regulations.
+  </div>
+</section>
+
+<!-- BROKER TOUR -->
+<section class="broker" id="broker-tour">
+  <div class="section-label reveal">Every Friday</div>
+  <div class="divider reveal reveal-delay-1"></div>
+  <h2 class="section-title reveal reveal-delay-1">Broker Tour</h2>
+  <p class="section-sub reveal reveal-delay-2">A separate weekly event — showcase your listings and explore properties across Dublin, Pleasanton & Sunol. No meeting attendance required.</p>
+  <div class="broker-two-col">
+    <div class="reveal reveal-delay-1">
+      <div class="broker-card">
+        <div class="broker-card-header">
+          <i class="fas fa-route"></i>
+          <div><h3>Weekly Broker Tour</h3><p>Dublin · Pleasanton · Sunol</p></div>
+        </div>
+        <div class="broker-card-body">
+          <div class="broker-row"><span class="label">Day</span><span class="value">Every Friday</span></div>
+          <div class="broker-row"><span class="label">Time</span><span class="value teal">10:30 AM – 1 PM</span></div>
+          <div class="broker-row"><span class="label">Tour sheet deadline</span><span class="value">2 PM Thursday</span></div>
+          <div class="broker-row"><span class="label">How to get on tour</span><span class="value">Add "Tour" to your listing in Paragon</span></div>
+          <div class="broker-row"><span class="label">C.A.R. note</span><span class="value" style="font-size:0.82rem;">No alcohol during Broker Tour · Sanctioned by Bay East</span></div>
+        </div>
+        <div class="broker-cta">
+          <a href="http://bayeast.org/wp-content/uploads/VREN-Toursheet.pdf" target="_blank" class="btn-primary" style="font-size:0.8rem;padding:11px 22px;display:inline-flex;align-items:center;gap:8px;background:var(--dark);border-color:var(--dark);box-shadow:none;">
+            <i class="fas fa-file-alt"></i>View tour sheet (login required)
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="reveal reveal-delay-2">
+      <div class="broker-card" style="overflow:hidden;">
+        <div class="broker-card-header">
+          <i class="fas fa-star"></i>
+          <div><h3>Super Tour</h3><p>Featured listing spotlight</p></div>
+        </div>
+        <div class="super-tour">
+          <div class="entry-fee">$50</div>
+          <div class="entry-label">Per property submission</div>
+          <p>Submit your listing for Super Tour to receive featured presentation time during the meeting.</p>
+          <ul class="tour-steps">
+            <li><i class="fas fa-check"></i>$50 per property — cash or Venmo</li>
+            <li><i class="fas fa-check"></i>Submit by 5 PM Thursday the week of Super Tour</li>
+            <li><i class="fas fa-check"></i>Questions? Contact Cherie Mayberry</li>
+          </ul>
+          <p class="win-note"><i class="fas fa-gift" style="margin-right:5px;"></i>Attendees can win up to $250 in cash raffles on Super Tour days.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SPONSOR -->
+<section class="sponsor" id="sponsor">
+  <div class="section-label reveal" style="color:var(--teal)">Support VREN</div>
+  <div class="divider reveal reveal-delay-1"></div>
+  <h2 class="section-title light reveal reveal-delay-1">Become a VREN sponsor</h2>
+  <p class="section-sub reveal reveal-delay-2" style="color:rgba(255,255,255,0.5);">Gain exclusive visibility in front of Tri-Valley real estate professionals every week. Semi-annual rates shown.</p>
+  <div class="sponsor-grid">
+    <div class="sponsor-card reveal reveal-delay-1">
+      <h3>Annual Sponsor</h3>
+      <div class="sponsor-price">$87</div>
+      <div class="sponsor-period">semi-annual</div>
+      <p>Sponsor table, flyer rights, and weekly brand visibility at VREN meetings.</p>
+    </div>
+    <div class="sponsor-card featured reveal reveal-delay-2">
+      <div class="sponsor-badge">Most popular</div>
+      <h3>Annual + Fastpass</h3>
+      <div class="sponsor-price">$162</div>
+      <div class="sponsor-period">semi-annual</div>
+      <p>Annual Sponsor plus Fastpass priority presentation access.</p>
+    </div>
+    <div class="sponsor-card reveal reveal-delay-3">
+      <h3>Fastpass Only</h3>
+      <div class="sponsor-price">$87</div>
+      <div class="sponsor-period">semi-annual</div>
+      <p>Priority Fastpass access to present at VREN — without the sponsor table.</p>
+    </div>
+    <div class="sponsor-card reveal reveal-delay-4">
+      <h3>Monthly</h3>
+      <div class="sponsor-price">$200</div>
+      <div class="sponsor-period">per month</div>
+      <p>Maximum flexibility — ideal for a trial month of presence at VREN.</p>
+    </div>
+  </div>
+  <div class="sponsor-cta-wrap reveal">
+    <div class="sponsor-contact">
+      <p>To become a sponsor, contact:</p>
+      <div class="name">Andriana Mendez</div>
+      <p><a href="mailto:info@custom-movers.com">info@custom-movers.com</a></p>
+      <p><a href="tel:9255955759">(925) 595-5759</a> — call or text</p>
+    </div>
+  </div>
+  <div class="flyer-note reveal">
+    <i class="fas fa-info-circle" style="color:var(--teal);margin-right:6px;"></i>
+    <strong style="color:rgba(255,255,255,0.6);">Flyer policy:</strong> Only monthly or annual sponsors may place marketing materials on sponsor tables. All others may share during the Community Announcements segment and distribute outside after the meeting.
+  </div>
+</section>
+
+<!-- SIDETRACK -->
+<section class="sidetrack" id="sidetrack">
+  <div class="sidetrack-inner">
+    <div class="sidetrack-img-wrap reveal">
+      <img src="images/sidetrack.jpg" alt="Sidetrack Bar + Grill exterior in Downtown Pleasanton" />
+    </div>
+    <div class="sidetrack-text">
+      <div class="section-label reveal" style="text-align:left;margin-bottom:8px;">Our meeting venue</div>
+      <h2 class="reveal reveal-delay-1">Sidetrack Bar + Grill</h2>
+      <span class="tagline reveal reveal-delay-1">"Get SideTrack'd!"</span>
+      <p class="reveal reveal-delay-2">Nestled in the heart of Downtown Pleasanton, Sidetrack Bar + Grill is the perfect home for VREN's Friday morning meetings. With a welcoming atmosphere, great food, and two large covered dog-friendly patios, it's a community gathering place we're proud to call ours.</p>
+      <p class="reveal reveal-delay-2">Enjoy a breakfast burrito or fresh pastries with your coffee while you connect with fellow Tri-Valley real estate professionals.</p>
+      <div class="sidetrack-info reveal reveal-delay-3">
+        <div class="sidetrack-info-row"><i class="fas fa-map-marker-alt"></i><span>30 W Angela St, Pleasanton, CA 94566</span></div>
+        <div class="sidetrack-info-row"><i class="fas fa-phone"></i><a href="tel:9253996789" style="color:var(--teal);text-decoration:none;">(925) 399-6789</a></div>
+        <div class="sidetrack-info-row"><i class="fas fa-utensils"></i><span>Burgers · sandwiches · salads · weekly BBQ specials</span></div>
+        <div class="sidetrack-info-row"><i class="fas fa-paw"></i><span>Dog-friendly covered heated patios</span></div>
+        <div class="sidetrack-info-row"><i class="fas fa-glass-cheers"></i><span>Weekend brunch · music bingo · special events</span></div>
+      </div>
+      <div class="sidetrack-socials reveal reveal-delay-4">
+        <a href="https://www.sidetrackeats.com" target="_blank" class="social-btn web"><i class="fas fa-globe"></i>Website</a>
+        <a href="https://www.facebook.com/sidetrack/" target="_blank" class="social-btn fb"><i class="fab fa-facebook-f"></i>Facebook</a>
+        <a href="https://www.instagram.com/sidetrackeats" target="_blank" class="social-btn ig"><i class="fab fa-instagram"></i>Instagram</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- COMMITTEE -->
+<section class="committee" id="committee">
+  <div class="section-label reveal">Our team</div>
+  <div class="divider reveal reveal-delay-1"></div>
+  <h2 class="section-title reveal reveal-delay-1">VREN Committee</h2>
+  <p class="section-sub reveal reveal-delay-2">Our volunteer committee keeps VREN running smoothly. Interested in joining? Contact any member — we have plenty of room!</p>
+  <div class="committee-grid">
+    <div class="committee-card reveal reveal-delay-1">
+      <div class="committee-avatar">CM</div>
+      <h3>Cherie Mayberry</h3>
+      <div class="role">2026 Chair</div>
+      <div class="company">NC Private Capital</div>
+      <a href="tel:9253004085">(925) 300-4085</a>
+      <a href="mailto:cherie@bluedinvest.com">cherie@bluedinvest.com</a>
+    </div>
+    <div class="committee-card reveal reveal-delay-2">
+      <div class="committee-avatar">JC</div>
+      <h3>Jessica Cheng</h3>
+      <div class="role">Vice-Chair / Membership</div>
+      <div class="company">eXp Realty</div>
+      <a href="tel:9259974665">(925) 997-4665</a>
+      <a href="mailto:jessica.cheng@jandlrealestategroup.com">jessica.cheng@jandlrealestategroup.com</a>
+    </div>
+    <div class="committee-card reveal reveal-delay-3">
+      <div class="committee-avatar">MC</div>
+      <h3>Michael Cherman</h3>
+      <div class="role">Vice-Chair</div>
+      <div class="company">SERHANT. Real Estate</div>
+      <a href="tel:9257897297">(925) 789-7297</a>
+      <a href="mailto:michael@elationre.com">michael@elationre.com</a>
+    </div>
+    <div class="committee-card reveal reveal-delay-1">
+      <div class="committee-avatar">SY</div>
+      <h3>Sam Yusufi</h3>
+      <div class="role">Past Chair</div>
+      <div class="company">Legacy Real Estate</div>
+      <a href="tel:9254258929">(925) 425-8929</a>
+      <a href="mailto:sam@samyusufi.com">sam@samyusufi.com</a>
+    </div>
+    <div class="committee-card reveal reveal-delay-2">
+      <div class="committee-avatar">AM</div>
+      <h3>Andriana Mendez</h3>
+      <div class="role">Sponsorships</div>
+      <div class="company">Custom Moving Solutions</div>
+      <a href="tel:9255955759">(925) 595-5759</a>
+      <a href="mailto:info@custom-movers.com">info@custom-movers.com</a>
+    </div>
+    <div class="committee-card reveal reveal-delay-3">
+      <div class="committee-avatar">ZM</div>
+      <h3>Zulien Morales</h3>
+      <div class="role">Social Media / Events</div>
+      <div class="company">State Farm</div>
+      <a href="tel:9255741600">(925) 574-1600</a>
+      <a href="mailto:zulien@zulienmorales.com">zulien@zulienmorales.com</a>
+    </div>
+    <div class="committee-card reveal reveal-delay-1">
+      <div class="committee-avatar">SI</div>
+      <h3>Serena Ivey-Gizaw</h3>
+      <div class="role">Welcome Wagon</div>
+      <div class="company">A.S.G Property Funding</div>
+      <a href="tel:5103052870">(510) 305-2870</a>
+      <a href="mailto:serenagizaw@asgpropertyfunding.com">serenagizaw@asgpropertyfunding.com</a>
+    </div>
+    <div class="committee-card reveal reveal-delay-2">
+      <div class="committee-avatar">TS</div>
+      <h3>Trinna Sycip</h3>
+      <div class="role">Treasurer</div>
+      <div class="company">Preferred Mortgage Partners</div>
+      <a href="tel:5103672079">(510) 367-2079</a>
+      <a href="mailto:trinna.sycip@pmpmortgage.com">trinna.sycip@pmpmortgage.com</a>
+    </div>
+    <div class="committee-card reveal reveal-delay-3">
+      <div class="committee-avatar">RW</div>
+      <h3>Ricky Walters</h3>
+      <div class="role">Tech Guru</div>
+      <div class="company">Landmark Lending</div>
+      <a href="tel:9252002798">(925) 200-2798</a>
+      <a href="mailto:rwalters@landmarklendingnetwork.com">rwalters@landmarklendingnetwork.com</a>
+    </div>
+  </div>
+</section>
+
+<!-- VREN SOCIAL -->
+<section class="vren-social" id="social">
+  <div class="section-label reveal">Stay connected</div>
+  <div class="divider reveal reveal-delay-1"></div>
+  <h2 class="section-title reveal reveal-delay-1">Follow VREN</h2>
+  <p class="section-sub reveal reveal-delay-2">Stay up to date on meetings, listings, events, and community news.</p>
+  <div class="vren-social-inner">
+    <div class="social-card fb-card reveal reveal-delay-1">
+      <i class="fab fa-facebook"></i>
+      <h3>VREN on Facebook</h3>
+      <p>Meeting updates, announcements, and community highlights</p>
+      <a href="https://www.facebook.com/MyVREN" target="_blank"><i class="fab fa-facebook-f" style="margin-right:6px;"></i>Follow on Facebook</a>
+    </div>
+    <div class="social-card ig-card reveal reveal-delay-2">
+      <i class="fab fa-instagram"></i>
+      <h3>VREN on Instagram</h3>
+      <p>@valleyrealestatenetworking — photos, events, and more</p>
+      <a href="https://www.instagram.com/valleyrealestatenetworking/" target="_blank"><i class="fab fa-instagram" style="margin-right:6px;"></i>Follow on Instagram</a>
+    </div>
+  </div>
+</section>
+
+<!-- NONPROFIT -->
+<section class="nonprofit-sponsor" id="nonprofit">
+  <div class="nonprofit-inner">
+    <p class="label reveal">Proudly supported by</p>
+    <a href="https://tvnpa.org" target="_blank" rel="noopener"><img src="images/tvna-logo.png" alt="Tri-Valley Nonprofit Alliance logo" class="reveal reveal-delay-1" /></a>
+    <p class="desc reveal reveal-delay-2">VREN is proudly sponsored by the <strong>Tri-Valley Nonprofit Alliance</strong> — supporting community, connection, and collaboration across the Pleasanton, Dublin, and Sunol areas.</p>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+  <div class="section-label reveal" style="color:var(--teal)">Get in touch</div>
+  <div class="divider reveal reveal-delay-1"></div>
+  <h2 class="section-title light reveal reveal-delay-1">Contact & location</h2>
+  <p class="section-sub reveal reveal-delay-2" style="color:rgba(255,255,255,0.5);">Questions about attending, sponsoring, or getting on the tour sheet? We'd love to hear from you.</p>
+  <div class="contact-inner">
+    <div>
+      <div class="contact-info-item reveal reveal-delay-1">
+        <div class="ci-icon"><i class="fas fa-envelope"></i></div>
+        <div class="ci-text"><h4>Main contact</h4><a href="mailto:vren.sponsorship@gmail.com">vren.sponsorship@gmail.com</a></div>
+      </div>
+      <div class="contact-info-item reveal reveal-delay-2">
+        <div class="ci-icon"><i class="fas fa-map-marker-alt"></i></div>
+        <div class="ci-text"><h4>Meeting location</h4><p>Sidetrack Bar & Grill<br>30 W Angela St, Pleasanton, CA 94566</p></div>
+      </div>
+      <div class="contact-info-item reveal reveal-delay-3">
+        <div class="ci-icon"><i class="fas fa-calendar-alt"></i></div>
+        <div class="ci-text"><h4>Meeting schedule</h4><p>Select Friday mornings · 9 AM – 10 AM<br>Doors open 8:30 AM</p></div>
+      </div>
+    </div>
+    <div class="reveal reveal-delay-2">
+      <div class="map-embed">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3156.9!2d-121.8746!3d37.6586!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x808fe02e5b2e9b9f%3A0x1!2sSidetrack+Bar+%26+Grill%2C+30+W+Angela+St%2C+Pleasanton%2C+CA+94566!5e0!3m2!1sen!2sus!4v1" allowfullscreen="" loading="lazy"></iframe>
+      </div>
+      <div class="social-contact-box reveal reveal-delay-3">
+        <p><i class="fas fa-share-alt" style="color:var(--teal);margin-right:8px;"></i>Follow VREN on social media</p>
+        <div style="display:flex;gap:10px;flex-wrap:wrap;">
+          <a href="https://www.facebook.com/MyVREN" target="_blank" class="social-btn fb"><i class="fab fa-facebook-f"></i>Facebook</a>
+          <a href="https://www.instagram.com/valleyrealestatenetworking/" target="_blank" class="social-btn ig"><i class="fab fa-instagram"></i>Instagram</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-top">
+    <div class="footer-brand">
+      <img src="images/vren-logo.png" alt="VREN" />
+      <p>Valley Real Estate Network — the Tri-Valley's weekly real estate marketing meeting, connecting Pleasanton, Dublin, and Sunol professionals.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Navigation</h4>
+      <ul>
+        <li><a href="#about">About VREN</a></li>
+        <li><a href="#meeting">Meeting details</a></li>
+        <li><a href="#broker-tour">Broker Tour</a></li>
+        <li><a href="#sponsor">Sponsorship</a></li>
+        <li><a href="#sidetrack">The venue</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Resources</h4>
+      <ul>
+        <li><a href="http://bayeast.org/wp-content/uploads/VREN-Toursheet.pdf" target="_blank">Tour sheet (login required)</a></li>
+        <li><a href="https://bayeast.org/vren/" target="_blank">Bay East VREN page</a></li>
+        <li><a href="https://www.sidetrackeats.com" target="_blank">Sidetrack Bar & Grill</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Follow us</h4>
+      <ul>
+        <li><a href="https://www.facebook.com/MyVREN" target="_blank"><i class="fab fa-facebook-f" style="width:14px;"></i> Facebook</a></li>
+        <li><a href="https://www.instagram.com/valleyrealestatenetworking/" target="_blank"><i class="fab fa-instagram" style="width:14px;"></i> Instagram</a></li>
+      </ul>
+      <div style="margin-top:20px;">
+        <h4>Main contact</h4>
+        <ul><li><a href="mailto:vren.sponsorship@gmail.com">vren.sponsorship@gmail.com</a></li></ul>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2026 Valley Real Estate Network (VREN). All rights reserved.</p>
+    <div class="footer-socials">
+      <a href="https://www.facebook.com/MyVREN" target="_blank"><i class="fab fa-facebook-f"></i></a>
+      <a href="https://www.instagram.com/valleyrealestatenetworking/" target="_blank"><i class="fab fa-instagram"></i></a>
+    </div>
+  </div>
+  <div class="footer-disclaimer">
+    Any references to, or information about vendors, service providers, and/or services not directly provided by the Bay East Association of REALTORS® do not constitute an endorsement or recommendation by Bay East. It is your responsibility to verify and investigate providers and services, and/or obtain your own professional advisor for all advice on such vendors, service providers, and/or services.
+    <br><br>
+    Any discussions regarding commissions or compensation during marketing meetings are strictly prohibited in accordance with association policies and applicable regulations. Broker Tour is a Bay East Association of REALTORS® sanctioned event. Follow all C.A.R. Open House and Broker Tour Guidelines and State and County property showing regulations. No alcohol may be served during Broker Tour.
+  </div>
+</footer>
+
+<script>
+  // Slideshow
+  let current = 0;
+  const slides = document.querySelectorAll('.hero-slide');
+  const dots = document.querySelectorAll('.dot');
+  function goToSlide(n) {
+    slides[current].classList.remove('active'); dots[current].classList.remove('active');
+    current = n; slides[current].classList.add('active'); dots[current].classList.add('active');
+  }
+  setInterval(() => goToSlide((current + 1) % slides.length), 5500);
+
+  // Scroll reveal
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); } });
+  }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+  // Mobile nav
+  function toggleMenu() {
+    const links = document.querySelector('.nav-links');
+    const cta = document.querySelector('.nav-cta');
+    if (links.style.display === 'flex') {
+      links.style.display = 'none'; cta.style.display = 'none';
+    } else {
+      links.style.cssText = 'display:flex;flex-direction:column;position:absolute;top:68px;left:0;right:0;background:rgba(13,13,13,0.98);padding:20px 24px;gap:16px;z-index:999;backdrop-filter:blur(16px);';
+      cta.style.cssText = 'display:block;margin:0 24px 20px;text-align:center;position:absolute;top:252px;left:0;right:0;z-index:999;';
+    }
+  }
+
+  // Smooth scroll
+  document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', e => {
+      const t = document.querySelector(a.getAttribute('href'));
+      if (t) { e.preventDefault(); window.scrollTo({ top: t.offsetTop - 68, behavior: 'smooth' }); }
+    });
+  });
+</script>
+</body>
+</html>
