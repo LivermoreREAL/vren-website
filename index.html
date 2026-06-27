@@ -420,7 +420,7 @@
       background: radial-gradient(ellipse at 80% 80%, rgba(40,168,154,0.07) 0%, transparent 55%);
       pointer-events: none;
     }
-    .sponsor-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; max-width: 960px; margin: 0 auto; }
+    .sponsor-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; max-width: 960px; margin: 0 auto; }
     .sponsor-card {
       background: rgba(255,255,255,0.04); border-radius: 8px; padding: 32px 20px; text-align: center;
       border: 1px solid rgba(255,255,255,0.07); position: relative;
@@ -437,7 +437,11 @@
     .sponsor-card h3 { color: rgba(255,255,255,0.55); font-size: 0.75rem; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; margin-bottom: 16px; }
     .sponsor-price { font-family: 'DM Serif Display', serif; font-size: 2.6rem; font-weight: 400; color: white; line-height: 1; letter-spacing: -0.02em; }
     .sponsor-period { color: rgba(255,255,255,0.35); font-size: 0.75rem; margin-bottom: 16px; }
-    .sponsor-card p { color: rgba(255,255,255,0.5); font-size: 0.83rem; line-height: 1.7; }
+    .sponsor-card p { color: rgba(255,255,255,0.5); font-size: 0.83rem; line-height: 1.7; margin-bottom: 14px; }
+    .sponsor-benefits { list-style: none; margin-top: 14px; text-align: left; }
+    .sponsor-benefits li { display: flex; gap: 9px; align-items: flex-start; padding: 7px 0; border-bottom: 1px solid rgba(255,255,255,0.06); color: rgba(255,255,255,0.65); font-size: 0.82rem; line-height: 1.55; }
+    .sponsor-benefits li:last-child { border-bottom: none; }
+    .sponsor-benefits li i { color: var(--teal); font-size: 0.7rem; margin-top: 4px; flex-shrink: 0; }
     .sponsor-cta-wrap { text-align: center; margin-top: 44px; }
     .sponsor-contact {
       background: rgba(40,168,154,0.08); border: 1px solid rgba(40,168,154,0.25);
@@ -451,33 +455,44 @@
     .flyer-note { max-width: 760px; margin: 28px auto 0; background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); border-radius: 6px; padding: 18px 24px; text-align: center; color: rgba(255,255,255,0.42); font-size: 0.82rem; line-height: 1.75; }
 
     /* ── COMMITTEE ── */
-    .committee { background: white; }
+    .committee { background: var(--dark); position: relative; overflow: hidden; }
+    .committee::before {
+      content: ''; position: absolute; inset: 0;
+      background: radial-gradient(ellipse at 100% 0%, rgba(40,168,154,0.07) 0%, transparent 55%);
+      pointer-events: none;
+    }
     .committee-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; max-width: 860px; margin: 0 auto; }
     .committee-card {
       text-align: center; padding: 30px 20px;
-      border: 1px solid #ebebeb; border-radius: 8px;
-      transition: box-shadow 0.25s, border-color 0.25s, transform 0.25s;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08); border-radius: 8px;
+      transition: box-shadow 0.25s, border-color 0.25s, transform 0.25s, background 0.2s;
     }
-    .committee-card:hover { box-shadow: 0 8px 32px rgba(0,0,0,0.08); border-color: var(--teal); transform: translateY(-3px); }
+    .committee-card:hover { box-shadow: 0 8px 32px rgba(0,0,0,0.3); border-color: var(--teal); transform: translateY(-3px); background: rgba(255,255,255,0.07); }
     .committee-avatar {
       width: 60px; height: 60px; background: var(--teal);
-      border-radius: 10px; /* squircle instead of circle */
+      border-radius: 10px;
       margin: 0 auto 14px; display: flex; align-items: center; justify-content: center;
       font-size: 1.1rem; color: white; font-family: 'Outfit', sans-serif; font-weight: 700;
       letter-spacing: -0.5px;
     }
-    .committee-card h3 { font-size: 0.95rem; font-weight: 600; color: #0d0d0d; margin-bottom: 3px; }
-    .committee-card .role { font-size: 0.72rem; color: var(--teal); font-weight: 600; text-transform: uppercase; letter-spacing: 1.2px; margin-bottom: 6px; }
-    .committee-card .company { font-size: 0.78rem; color: #aaa; font-weight: 500; margin-bottom: 8px; }
-    .committee-card a { color: var(--teal); text-decoration: none; font-size: 0.8rem; display: block; margin-top: 3px; transition: color 0.2s; }
-    .committee-card a:hover { color: var(--teal-dark); }
+    .committee-card h3 { font-size: 0.95rem; font-weight: 600; color: white; margin-bottom: 3px; }
+    .committee-card .role { font-size: 0.72rem; color: var(--teal-light); font-weight: 600; text-transform: uppercase; letter-spacing: 1.2px; margin-bottom: 6px; }
+    .committee-card .company { font-size: 0.78rem; color: rgba(255,255,255,0.35); font-weight: 500; margin-bottom: 8px; }
+    .committee-card a { color: var(--teal-light); text-decoration: none; font-size: 0.8rem; display: block; margin-top: 3px; transition: color 0.2s; }
+    .committee-card a:hover { color: white; }
 
     /* ── NONPROFIT ── */
-    .nonprofit-sponsor { background: var(--off-white); padding: 64px 48px; }
-    .nonprofit-inner { max-width: 620px; margin: 0 auto; text-align: center; }
+    .nonprofit-sponsor { background: var(--dark2); padding: 64px 48px; position: relative; overflow: hidden; }
+    .nonprofit-sponsor::before {
+      content: ''; position: absolute; inset: 0;
+      background: radial-gradient(ellipse at 50% 100%, rgba(40,168,154,0.07) 0%, transparent 60%);
+      pointer-events: none;
+    }
+    .nonprofit-inner { max-width: 620px; margin: 0 auto; text-align: center; position: relative; }
     .nonprofit-inner p.label { font-size: 0.7rem; font-weight: 600; letter-spacing: 4px; text-transform: uppercase; color: var(--teal); margin-bottom: 28px; }
     .nonprofit-inner img { max-width: 260px; margin: 0 auto 20px; display: block; }
-    .nonprofit-inner p.desc { color: #666; font-size: 0.92rem; line-height: 1.8; }
+    .nonprofit-inner p.desc { color: rgba(255,255,255,0.55); font-size: 0.92rem; line-height: 1.8; }
 
     /* ── CONTACT ── */
     .contact { background: var(--dark); position: relative; overflow: hidden; }
@@ -523,7 +538,7 @@
       .about-features { grid-template-columns: 1fr 1fr; }
       .meeting-grid { grid-template-columns: 1fr 1fr; }
       .broker-two-col, .sidetrack-inner, .contact-inner, .footer-top, .vren-social-inner { grid-template-columns: 1fr; }
-      .sponsor-grid { grid-template-columns: 1fr 1fr; }
+      .sponsor-grid { grid-template-columns: 1fr; }
       .footer-top { grid-template-columns: 1fr 1fr; }
       nav { padding: 0 22px; }
       .nav-links, .nav-cta { display: none; }
@@ -741,29 +756,48 @@
   <p class="section-sub reveal reveal-delay-2" style="color:rgba(255,255,255,0.5);">Gain exclusive visibility in front of Tri-Valley real estate professionals every week. Semi-annual rates shown.</p>
   <div class="sponsor-grid">
     <div class="sponsor-card reveal reveal-delay-1">
-      <h3>Annual Sponsor</h3>
+      <h3>Semi-Annual Sponsor</h3>
       <div class="sponsor-price">$87</div>
       <div class="sponsor-period">semi-annual</div>
-      <p>Sponsor table, flyer rights, and weekly brand visibility at VREN meetings.</p>
+      <ul class="sponsor-benefits">
+        <li><i class="fas fa-check"></i>Name, contact info & company listed on weekly slideshow and printout</li>
+        <li><i class="fas fa-check"></i>20-second infomercial each week at meetings</li>
+        <li><i class="fas fa-check"></i>One-time 2-minute speaking opportunity (educational content)</li>
+        <li><i class="fas fa-check"></i>Display marketing materials on the sponsor table</li>
+      </ul>
     </div>
     <div class="sponsor-card featured reveal reveal-delay-2">
       <div class="sponsor-badge">Most popular</div>
-      <h3>Annual + Fastpass</h3>
+      <h3>Semi-Annual + Fast Pass</h3>
       <div class="sponsor-price">$162</div>
       <div class="sponsor-period">semi-annual</div>
-      <p>Annual Sponsor plus Fastpass priority presentation access.</p>
+      <ul class="sponsor-benefits">
+        <li><i class="fas fa-check"></i>Name, contact info & company listed on weekly slideshow and printout</li>
+        <li><i class="fas fa-check"></i>20-second infomercial each week at meetings</li>
+        <li><i class="fas fa-check"></i>One-time 2-minute speaking opportunity (educational content)</li>
+        <li><i class="fas fa-check"></i>Display marketing materials on the sponsor table</li>
+        <li><i class="fas fa-check"></i>Fast Pass priority access included</li>
+      </ul>
     </div>
     <div class="sponsor-card reveal reveal-delay-3">
-      <h3>Fastpass Only</h3>
+      <h3>Semi-Annual Fast Pass</h3>
       <div class="sponsor-price">$87</div>
       <div class="sponsor-period">semi-annual</div>
-      <p>Priority Fastpass access to present at VREN — without the sponsor table.</p>
+      <ul class="sponsor-benefits">
+        <li><i class="fas fa-check"></i>Entrance to every meeting through the rest of the year</li>
+      </ul>
     </div>
     <div class="sponsor-card reveal reveal-delay-4">
-      <h3>Monthly</h3>
+      <h3>Monthly Room Sponsor</h3>
       <div class="sponsor-price">$200</div>
       <div class="sponsor-period">per month</div>
-      <p>Maximum flexibility — ideal for a trial month of presence at VREN.</p>
+      <p>Ideal for those who want additional highlights during the months they choose to sponsor.</p>
+      <ul class="sponsor-benefits">
+        <li><i class="fas fa-check"></i>Slide recognition during your month of sponsorship</li>
+        <li><i class="fas fa-check"></i>Food tabletop sign recognizing you that month</li>
+        <li><i class="fas fa-check"></i>5-minute speaking time during your sponsorship month</li>
+        <li><i class="fas fa-check"></i>30-second video posted to our social page (self-recorded or filmed at a meeting)</li>
+      </ul>
     </div>
   </div>
   <div class="sponsor-cta-wrap reveal">
@@ -810,10 +844,10 @@
 
 <!-- COMMITTEE -->
 <section class="committee" id="committee">
-  <div class="section-label reveal">Our team</div>
+  <div class="section-label reveal" style="color:var(--teal)">Our team</div>
   <div class="divider reveal reveal-delay-1"></div>
-  <h2 class="section-title reveal reveal-delay-1">VREN Committee</h2>
-  <p class="section-sub reveal reveal-delay-2">Our volunteer committee keeps VREN running smoothly. Interested in joining? Contact any member — we have plenty of room!</p>
+  <h2 class="section-title light reveal reveal-delay-1">VREN Committee</h2>
+  <p class="section-sub reveal reveal-delay-2" style="color:rgba(255,255,255,0.5);">Our volunteer committee keeps VREN running smoothly. Interested in joining? Contact any member — we have plenty of room!</p>
   <div class="committee-grid">
     <div class="committee-card reveal reveal-delay-1">
       <div class="committee-avatar">CM</div>
