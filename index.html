@@ -454,6 +454,24 @@
     .sponsor-contact a:hover { color: white; }
     .flyer-note { max-width: 760px; margin: 28px auto 0; background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); border-radius: 6px; padding: 18px 24px; text-align: center; color: rgba(255,255,255,0.42); font-size: 0.82rem; line-height: 1.75; }
 
+    /* ── ANNUAL SPONSORS ── */
+    .annual-sponsors { background: var(--off-white); }
+    .annual-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; max-width: 1100px; margin: 0 auto; }
+    .annual-card {
+      position: relative;
+      background: white; border-radius: 8px; padding: 18px 16px;
+      border: 1px solid #ebebeb;
+      transition: box-shadow 0.2s, transform 0.2s, border-color 0.2s;
+    }
+    .annual-card:hover { box-shadow: 0 6px 24px rgba(0,0,0,0.08); transform: translateY(-2px); border-color: var(--teal); }
+    .annual-card .ac-name { font-weight: 700; font-size: 0.88rem; color: #111; margin-bottom: 2px; }
+    .annual-card .ac-company { font-size: 0.76rem; color: var(--teal); font-weight: 600; margin-bottom: 10px; min-height: 18px; }
+    .annual-card .ac-contact { display: flex; flex-direction: column; gap: 3px; }
+    .annual-card .ac-contact a { font-size: 0.75rem; color: #666; text-decoration: none; transition: color 0.2s; position: relative; z-index: 1; }
+    .annual-card .ac-contact a:hover { color: var(--teal); }
+    .annual-card .ac-name, .annual-card .ac-company, .annual-card .ac-contact { position: relative; z-index: 1; }
+    .ac-overlay { position: absolute; inset: 0; border-radius: 8px; z-index: 0; cursor: pointer; }
+
     /* ── COMMITTEE ── */
     .committee { background: var(--dark); position: relative; overflow: hidden; }
     .committee::before {
@@ -814,6 +832,237 @@
   </div>
 </section>
 
+<!-- ANNUAL SPONSORS -->
+<section class="annual-sponsors" id="annual-sponsors">
+  <div class="section-label reveal">2026 Sponsors</div>
+  <div class="divider reveal reveal-delay-1"></div>
+  <h2 class="section-title reveal reveal-delay-1">Thank you to our annual sponsors</h2>
+  <p class="section-sub reveal reveal-delay-2">These professionals invest in the VREN community every year. We're grateful for their continued support.</p>
+  <div class="annual-grid">
+    <div class="annual-card reveal reveal-delay-1">
+      <div class="ac-name">Andriana Mendez</div>
+      <div class="ac-company">Custom Moving Solutions</div>
+      <div class="ac-contact">
+        <a href="tel:9255955759">(925) 595-5759</a>
+        <a href="mailto:info@custom-movers.com">info@custom-movers.com</a>
+      </div>
+      <a class="ac-overlay" href="https://custom-movers.com" target="_blank" rel="noopener" aria-label="Visit Andriana Mendez's website"></a>
+    </div>
+    <div class="annual-card reveal reveal-delay-2">
+      <div class="ac-name">Anna Ruotolo</div>
+      <div class="ac-company">Synergy One Lending</div>
+      <div class="ac-contact">
+        <a href="tel:9259985244">(925) 998-5244</a>
+        <a href="mailto:aruotolo@s1l.com">aruotolo@s1l.com</a>
+      </div>
+      <a class="ac-overlay" href="https://s1l.com/loanofficer/anna-ruotolo/" target="_blank" rel="noopener" aria-label="Visit Anna Ruotolo's website"></a>
+    </div>
+    <div class="annual-card reveal reveal-delay-3">
+      <div class="ac-name">Annette Khaliq</div>
+      <div class="ac-company">JCP-LGS Natural Hazard Disclosures</div>
+      <div class="ac-contact">
+        <a href="tel:9259801191">(925) 980-1191</a>
+        <a href="mailto:ankhaliq@firstam.com">ankhaliq@firstam.com</a>
+      </div>
+      <a class="ac-overlay" href="https://orderform.disclosures.com" target="_blank" rel="noopener" aria-label="Visit Annette Khaliq's website"></a>
+    </div>
+    <div class="annual-card reveal reveal-delay-4">
+      <div class="ac-name">Annie Chang</div>
+      <div class="ac-company">C2 Financial Corporation</div>
+      <div class="ac-contact">
+        <a href="tel:9252388176">(925) 238-8176</a>
+        <a href="mailto:annie@changteam.com">annie@changteam.com</a>
+      </div>
+      <a class="ac-overlay" href="https://changteam.com" target="_blank" rel="noopener" aria-label="Visit Annie Chang's website"></a>
+    </div>
+    <div class="annual-card reveal reveal-delay-1">
+      <div class="ac-name">Bob Freedman</div>
+      <div class="ac-company">Crawlspace Clean</div>
+      <div class="ac-contact">
+        <a href="tel:5106737462">(510) 673-7462</a>
+        <a href="mailto:crawlspaceclean@gmail.com">crawlspaceclean@gmail.com</a>
+      </div>
+    </div>
+    <div class="annual-card reveal reveal-delay-2">
+      <div class="ac-name">Carla Winter</div>
+      <div class="ac-company">ReMax Accord</div>
+      <div class="ac-contact">
+        <a href="tel:9252001060">(925) 200-1060</a>
+        <a href="mailto:carla@carlawinter.com">carla@carlawinter.com</a>
+      </div>
+      <a class="ac-overlay" href="https://www.carlawinter.com" target="_blank" rel="noopener" aria-label="Visit Carla Winter's website"></a>
+    </div>
+    <div class="annual-card reveal reveal-delay-3">
+      <div class="ac-name">Chris Winston</div>
+      <div class="ac-company">Renovation Sells</div>
+      <div class="ac-contact">
+        <a href="tel:5102204942">(510) 220-4942</a>
+        <a href="mailto:cwinston@renovationsells.com">cwinston@renovationsells.com</a>
+      </div>
+      <a class="ac-overlay" href="https://renovationsells.com/location/east-bay/" target="_blank" rel="noopener" aria-label="Visit Chris Winston's website"></a>
+    </div>
+    <div class="annual-card reveal reveal-delay-4">
+      <div class="ac-name">Claudia Kim</div>
+      <div class="ac-company"></div>
+      <div class="ac-contact">
+        <a href="tel:5102893381">(510) 289-3381</a>
+        <a href="mailto:claudiasuekim@outlook.com">claudiasuekim@outlook.com</a>
+      </div>
+    </div>
+    <div class="annual-card reveal reveal-delay-1">
+      <div class="ac-name">Dalia Sabella</div>
+      <div class="ac-company">Specialty Inspections</div>
+      <div class="ac-contact">
+        <a href="tel:9252499611">(925) 249-9611</a>
+        <a href="mailto:contactus@specialtyteam.com">contactus@specialtyteam.com</a>
+      </div>
+      <a class="ac-overlay" href="https://www.specialtyteam.com" target="_blank" rel="noopener" aria-label="Visit Dalia Sabella's website"></a>
+    </div>
+    <div class="annual-card reveal reveal-delay-2">
+      <div class="ac-name">Dan Otts</div>
+      <div class="ac-company">Vigilant Inspection</div>
+      <div class="ac-contact">
+        <a href="tel:9253965979">(925) 396-5979</a>
+        <a href="mailto:dan@vigilantinspection.com">dan@vigilantinspection.com</a>
+      </div>
+    </div>
+    <div class="annual-card reveal reveal-delay-3">
+      <div class="ac-name">Dean Simpson</div>
+      <div class="ac-company">iServe Residential Lending</div>
+      <div class="ac-contact">
+        <a href="tel:9252003906">(925) 200-3906</a>
+        <a href="mailto:dsimpson@iservelending.com">dsimpson@iservelending.com</a>
+      </div>
+      <a class="ac-overlay" href="https://www.iservesandiego.com/deansimpson" target="_blank" rel="noopener" aria-label="Visit Dean Simpson's website"></a>
+    </div>
+    <div class="annual-card reveal reveal-delay-4">
+      <div class="ac-name">Eileen Manger</div>
+      <div class="ac-company">Compass</div>
+      <div class="ac-contact">
+        <a href="tel:9256991274">(925) 699-1274</a>
+        <a href="mailto:eileen.manger@compass.com">eileen.manger@compass.com</a>
+      </div>
+      <a class="ac-overlay" href="https://www.compass.com/agents/eileen-manger/" target="_blank" rel="noopener" aria-label="Visit Eileen Manger's website"></a>
+    </div>
+    <div class="annual-card reveal reveal-delay-1">
+      <div class="ac-name">Erica Badger</div>
+      <div class="ac-company">Patelco Credit Union</div>
+      <div class="ac-contact">
+        <a href="tel:9255485244">(925) 548-5244</a>
+        <a href="mailto:erica.badger@yahoo.com">erica.badger@yahoo.com</a>
+      </div>
+      <a class="ac-overlay" href="https://www.patelco.org/credit-cards-and-loans/home-loans/mortgage-consultants" target="_blank" rel="noopener" aria-label="Visit Erica Badger's website"></a>
+    </div>
+    <div class="annual-card reveal reveal-delay-2">
+      <div class="ac-name">Erica Starkey</div>
+      <div class="ac-company">JPAR Iron Horse Real Estate</div>
+      <div class="ac-contact">
+        <a href="tel:9259891613">(925) 989-1613</a>
+        <a href="mailto:erica.starkey@jparironhorse.com">erica.starkey@jparironhorse.com</a>
+      </div>
+      <a class="ac-overlay" href="https://ericastarkey.jpar.com" target="_blank" rel="noopener" aria-label="Visit Erica Starkey's website"></a>
+    </div>
+    <div class="annual-card reveal reveal-delay-3">
+      <div class="ac-name">Jorge Duran</div>
+      <div class="ac-company">Jox Media</div>
+      <div class="ac-contact">
+        <a href="tel:5107660569">(510) 766-0569</a>
+        <a href="mailto:info@joxinc.com">info@joxinc.com</a>
+      </div>
+      <a class="ac-overlay" href="https://www.joxinc.com" target="_blank" rel="noopener" aria-label="Visit Jorge Duran's website"></a>
+    </div>
+    <div class="annual-card reveal reveal-delay-4">
+      <div class="ac-name">Josh Dye</div>
+      <div class="ac-company">Josh Dye Photography</div>
+      <div class="ac-contact">
+        <a href="tel:5103817031">(510) 381-7031</a>
+        <a href="mailto:jdyephotography@gmail.com">jdyephotography@gmail.com</a>
+      </div>
+    </div>
+    <div class="annual-card reveal reveal-delay-1">
+      <div class="ac-name">Justin Castro</div>
+      <div class="ac-company">Diversified Mortgage Group</div>
+      <div class="ac-contact">
+        <a href="tel:9253449329">(925) 344-9329</a>
+        <a href="mailto:justin@divmg.com">justin@divmg.com</a>
+      </div>
+      <a class="ac-overlay" href="https://www.divmg.com/mysite/justin-castro" target="_blank" rel="noopener" aria-label="Visit Justin Castro's website"></a>
+    </div>
+    <div class="annual-card reveal reveal-delay-2">
+      <div class="ac-name">Kristy Heyne</div>
+      <div class="ac-company">Fidelity National Home Warranty</div>
+      <div class="ac-contact">
+        <a href="tel:9253211253">(925) 321-1253</a>
+        <a href="mailto:kristy.heyne@fnf.com">kristy.heyne@fnf.com</a>
+      </div>
+      <a class="ac-overlay" href="https://www.homewarranty.com" target="_blank" rel="noopener" aria-label="Visit Kristy Heyne's website"></a>
+    </div>
+    <div class="annual-card reveal reveal-delay-3">
+      <div class="ac-name">Liz Saucedo</div>
+      <div class="ac-company">First American Home Warranty</div>
+      <div class="ac-contact">
+        <a href="tel:9254991266">(925) 499-1266</a>
+        <a href="mailto:lsaucedo@firstam.com">lsaucedo@firstam.com</a>
+      </div>
+      <a class="ac-overlay" href="https://homewarranty.firstam.com" target="_blank" rel="noopener" aria-label="Visit Liz Saucedo's website"></a>
+    </div>
+    <div class="annual-card reveal reveal-delay-4">
+      <div class="ac-name">Louis Heystek</div>
+      <div class="ac-company">Compass</div>
+      <div class="ac-contact">
+        <a href="tel:5109285501">(510) 928-5501</a>
+        <a href="mailto:louis.heystek@eastbayrealtor.com">louis.heystek@eastbayrealtor.com</a>
+      </div>
+      <a class="ac-overlay" href="https://www.compass.com/agents/louis-heystek/" target="_blank" rel="noopener" aria-label="Visit Louis Heystek's website"></a>
+    </div>
+    <div class="annual-card reveal reveal-delay-1">
+      <div class="ac-name">May Chua</div>
+      <div class="ac-company">Patrick Chua Insurance Agency</div>
+      <div class="ac-contact">
+        <a href="tel:6502496999">(650) 249-6999</a>
+        <a href="mailto:may.pchua@farmersagency.com">may.pchua@farmersagency.com</a>
+      </div>
+      <a class="ac-overlay" href="https://agents.farmers.com/ca/san-mateo/patrick-chua/" target="_blank" rel="noopener" aria-label="Visit May Chua's website"></a>
+    </div>
+    <div class="annual-card reveal reveal-delay-2">
+      <div class="ac-name">Melina Hollar</div>
+      <div class="ac-company">DB Standard Home Inspection</div>
+      <div class="ac-contact">
+        <a href="tel:9254872811">(925) 487-2811</a>
+        <a href="mailto:dbstandardoffice@gmail.com">dbstandardoffice@gmail.com</a>
+      </div>
+      <a class="ac-overlay" href="https://www.homegauge.com/shgi/dbehiel/" target="_blank" rel="noopener" aria-label="Visit Melina Hollar's website"></a>
+    </div>
+    <div class="annual-card reveal reveal-delay-3">
+      <div class="ac-name">Russ Cowley</div>
+      <div class="ac-company">Advantage Property Management</div>
+      <div class="ac-contact">
+        <a href="tel:9252739865">(925) 273-9865</a>
+        <a href="mailto:russ@advantagepms.com">russ@advantagepms.com</a>
+      </div>
+      <a class="ac-overlay" href="https://www.propertymanagementpleasanton.com" target="_blank" rel="noopener" aria-label="Visit Russ Cowley's website"></a>
+    </div>
+    <div class="annual-card reveal reveal-delay-4">
+      <div class="ac-name">Stephen Richardson</div>
+      <div class="ac-company">Powur, PBC</div>
+      <div class="ac-contact">
+        <a href="tel:9259229000">(925) 922-9000</a>
+        <a href="mailto:ceo@stephenvrichardson.com">ceo@stephenvrichardson.com</a>
+      </div>
+      <a class="ac-overlay" href="https://stephenvrichardson.com" target="_blank" rel="noopener" aria-label="Visit Stephen Richardson's website"></a>
+    </div>
+    <div class="annual-card reveal reveal-delay-1">
+      <div class="ac-name">Zulien Morales</div>
+      <div class="ac-company">State Farm</div>
+      <div class="ac-contact">
+        <a href="tel:9255741600">(925) 574-1600</a>
+        <a href="mailto:zulien@zulienmorales.com">zulien@zulienmorales.com</a>
+      </div>
+      <a class="ac-overlay" href="https://www.statefarm.com/agent/us/ca/pleasanton/zulien-morales-krrgm24q000" target="_blank" rel="noopener" aria-label="Visit Zulien Morales's website"></a>
+    </div>
+  </div>
+</section>
+
 <!-- SIDETRACK -->
 <section class="sidetrack" id="sidetrack">
   <div class="sidetrack-inner">
@@ -871,15 +1120,16 @@
       <div class="role">Vice-Chair</div>
       <div class="company">SERHANT. Real Estate</div>
       <a href="tel:9257897297">(925) 789-7297</a>
-      <a href="mailto:michael@elationre.com">michael@elationre.com</a>
+      <a href="mailto:mcherman.re@gmail.com">mcherman.re@gmail.com</a>
     </div>
     <div class="committee-card reveal reveal-delay-1">
       <div class="committee-avatar">SY</div>
       <h3>Sam Yusufi</h3>
       <div class="role">Past Chair</div>
-      <div class="company">Legacy Real Estate</div>
+      <div class="company">Legacy Real Estate & Associates</div>
       <a href="tel:9254258929">(925) 425-8929</a>
       <a href="mailto:sam@samyusufi.com">sam@samyusufi.com</a>
+      <a href="https://samyusufi.com" target="_blank" rel="noopener">samyusufi.com</a>
     </div>
     <div class="committee-card reveal reveal-delay-2">
       <div class="committee-avatar">AM</div>
@@ -888,6 +1138,7 @@
       <div class="company">Custom Moving Solutions</div>
       <a href="tel:9255955759">(925) 595-5759</a>
       <a href="mailto:info@custom-movers.com">info@custom-movers.com</a>
+      <a href="https://custom-movers.com" target="_blank" rel="noopener">custom-movers.com</a>
     </div>
     <div class="committee-card reveal reveal-delay-3">
       <div class="committee-avatar">ZM</div>
